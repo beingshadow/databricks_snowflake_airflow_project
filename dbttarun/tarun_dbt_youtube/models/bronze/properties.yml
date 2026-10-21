@@ -1,0 +1,35 @@
+models:
+  - name: bronze_date
+    config: #  Must match the filename of a model -- including case sensitivity.
+        materialized: view
+
+  - name: bronze_product
+    config:
+      materialized: view
+    columns: 
+       - name: product_sk
+         data_tests: 
+              - unique 
+              - not_null
+
+
+  - name: bronze_sales
+    columns: 
+       - name: sales_id
+         data_tests: 
+              - unique 
+              - not_null
+       - name: gross_amount
+         data_tests: 
+             - generic_non_negative
+      
+
+  #- name: bronze_product
+   # columns: 
+    #   - name: product_sk
+     #    data_tests: 
+      #        - unique 
+       #       - not_null
+
+    
+    

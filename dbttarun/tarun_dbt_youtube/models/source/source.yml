@@ -1,0 +1,14 @@
+sources:
+  - name: source          # The dbt identifier for this data source
+    database: dbt_tutorial_dev       # Optional: Physical database name in your warehouse
+    schema: source       # Optional: Physical schema name in your warehouse
+    
+    tables:
+      - name: fact_sales       # Table name used inside dbt
+      - name: fact_returns 
+      - name: dim_date    
+      - name: dim_store 
+
+      - name: dim_product
+      - name: dim_customer  
+         # Table name used inside dbt
